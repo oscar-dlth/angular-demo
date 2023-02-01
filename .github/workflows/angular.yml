@@ -2,8 +2,6 @@ name: Dev Integration CI / CD for Angular
 on:
   push:
     branches: [ "dev-integration" ]
-  pull_request:
-    branches: [ "dev-integration" ]
 
 jobs:
   build-and-deploy:

@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:prod": "npm test -- --watch=false --browsers=ChromeHeadless",
-    "build:prod": "ng build --configuration=production --base-href=https://oscar-dlth.github.io/angular-demo/"
+    "build:prod": "ng build --configuration=production --base-href=https://oscar-dlth.github.io/ecommerce-front/"
 
   },
   "private": true,

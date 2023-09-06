@@ -1,0 +1,8 @@
+<aside [ngClass]="{'collapsed': collapsed}">
+  <ng-container *ngIf="!collapsed">
+    <input type="text">
+    <ul>
+      <li> <a [routerLink]="['users']">Users</a></li>
+    </ul>
+  </ng-container>
+</aside>

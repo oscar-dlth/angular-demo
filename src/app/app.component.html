@@ -1,6 +1,6 @@
 <app-side-navigation-bar #sideNavComponent></app-side-navigation-bar>
 <app-navigation-bar ></app-navigation-bar>
 <main>
-  <span class="toogle-button" (click)="toogleSideBar()"><img src="../assets/{{sideNavComponent.collapsed? 'right': 'left'}}-arrow.svg" alt=""></span>
+  <span class="toogle-button" (click)="toogleSideBar()"><img src="./../assets/{{sideNavComponent.collapsed? 'right': 'left'}}-arrow.svg" alt=""></span>
   <router-outlet></router-outlet>
 </main>

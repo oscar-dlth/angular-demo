@@ -1,27 +1,21 @@
 aside
-  background: #686666
+  background: #5C8374
   float: left
   height: calc(100vh - 20px)
-  width: 250px
   position: relative
   display: flex
   flex-direction: column
   align-items: center
   z-index: 2
   overflow-y: scroll
+  width: 250px
   padding: 10px
 
   transition: width 200ms
 
-.collapsed
-    width: 10px
-    padding-left: 0px
-    padding-right: 0px
-
 
 aside::-webkit-scrollbar
   display: none
-
 
 ul
   display: flex
@@ -39,15 +33,4 @@ ul
       color: #ffffff
       font-weight: bold
 
-@keyframes collapse-aside
-  from
-    width: 250px
-  to
-    width: 10px
 
-
-@keyframes expand-aside
-  from
-    width: 10px
-  to
-    width: 250px

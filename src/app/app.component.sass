@@ -1,18 +1,3 @@
-nav
-  background: #686666
-  float: left
-  min-height: 100vh
-  min-width: 200px
-  position: relative
-  z-index: 10000
-
-header
-  top: 0
-  background: #868686
-  height: 50px
-  position: sticky
-
-
 main
   display: flex
   height: auto
@@ -22,6 +7,7 @@ main
   align-items: center
   justify-content: center
   position: relative
+  background: #93B1A6
 
 main::-webkit-scrollbar
   display: none
@@ -42,3 +28,4 @@ main::-webkit-scrollbar
   img
     width: 100%
     height: auto
+    aspect-ratio: attr(width) / attr(height)

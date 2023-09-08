@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LayoutFacadeService } from '../facade/layout-facade.service';
 
 @Component({
   selector: 'app-side-navigation-bar',
@@ -6,16 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-navigation-bar.component.sass']
 })
 export class SideNavigationBarComponent implements OnInit {
-
-  collapsed: Boolean = false;
-
-  constructor() { }
+  constructor(public layoutFacade: LayoutFacadeService) { }
 
   ngOnInit(): void {
   }
-
-  public collapseToggle(){
-    this.collapsed =  !this.collapsed;
-  }
-
 }

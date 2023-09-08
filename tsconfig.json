@@ -5,6 +5,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -26,5 +27,14 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "trailing-comma": [true, {
+    "singleline": "never",
+    "multiline": {
+      "objects": "always",
+      "arrays": "always",
+      "functions": "never",
+      "typeLiterals": "ignore"
+    }
+  }]
 }

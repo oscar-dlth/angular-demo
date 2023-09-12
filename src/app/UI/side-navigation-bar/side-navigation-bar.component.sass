@@ -1,0 +1,43 @@
+aside
+  background: #0f0f0f
+  float: left
+  height: 100vh
+  position: relative
+  display: flex
+  flex: start
+  z-index: 2
+  overflow-y: scroll
+  width: 250px
+  height: 100vh
+  border-right: rgba(168, 179, 207, 0.2) solid 1px
+  transition: width 200ms
+
+
+aside::-webkit-scrollbar
+  display: none
+
+ul
+  margin-top: 20px
+  display: flex
+  flex-direction: column
+  flex: start 1
+  padding: 0px
+
+  li
+    list-style-type: none
+    width: auto
+    text-align: start
+
+    a
+      color: #ffffff
+      font-weight: bold
+      text-decoration: none
+      font-size: 20px
+      display: block
+      padding-left: 10px
+      padding-right: 10px
+      &:hover
+        background: #353535
+      transition: background 200ms
+
+

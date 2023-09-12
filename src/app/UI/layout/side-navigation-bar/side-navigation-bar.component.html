@@ -1,7 +1,0 @@
-<aside [style.width.px]="layoutFacade.sideNavigationBarWith$ | async">
-  <ng-container *ngIf="!(layoutFacade.isSideNavigationBarCollapsed$ | async)">
-    <ul>
-      <li> <a [routerLink]="['users']">Users</a></li>
-    </ul>
-  </ng-container>
-</aside>

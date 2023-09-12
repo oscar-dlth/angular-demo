@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LayoutStateService {
+export class SideNavigationStateService {
 
   private sideNavigationExpandedWidth =  250;
   private sideNavigationCollapsedWith = 10;

@@ -1,0 +1,8 @@
+<aside [style.width.px]="with$ | async">
+  <ng-container *ngIf="!(isCollapsed$ | async)">
+    <ul>
+      <li class="cursor-pointer"> <a [routerLink]="['users']">Users</a></li>
+      <li class="cursor-pointer"> <a >Products</a></li>
+    </ul>
+  </ng-container>
+</aside>

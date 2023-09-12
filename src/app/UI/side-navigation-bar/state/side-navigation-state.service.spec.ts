@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { SideNavigationStateService } from './side-navigation-state.service';
 
-import { LayoutStateService } from './layout-state.service';
 
 describe('LayoutStateService', () => {
-  let service: LayoutStateService;
+  let service: SideNavigationStateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LayoutStateService);
+    service = TestBed.inject(SideNavigationStateService);
   });
 
   it('should be created', () => {

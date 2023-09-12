@@ -1,0 +1,11 @@
+<app-side-navigation-bar></app-side-navigation-bar>
+<app-navigation-bar ></app-navigation-bar>
+<main>
+  <app-toogle-button
+    [isActive]="isSideNavCollapsed | async"
+    (toggle)="sideNavigationFacade.toogleSideNav()"
+    imgActive="assets/right-arrow.svg"
+    imgInactive="assets/left-arrow.svg"></app-toogle-button>
+  <router-outlet></router-outlet>
+</main>
+

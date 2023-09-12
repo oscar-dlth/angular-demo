@@ -1,12 +1,1 @@
-<app-side-navigation-bar #sideNavComponent></app-side-navigation-bar>
-<app-navigation-bar ></app-navigation-bar>
-<main>
-  <ng-container [ngTemplateOutlet]="toggleButtonTemplate"
-    [ngTemplateOutletContext]="{ $implicit: layoutFacade.isSideNavigationBarCollapsed$ | async }">
-  </ng-container>
-  <router-outlet></router-outlet>
-</main>
-
-<ng-template #toggleButtonTemplate let-item>
-  <span class="toogle-button" (click)="layoutFacade.toogleSideNav()"><img src="assets/{{ item ? 'right': 'left' }}-arrow.svg" alt="close open" width="300" height="300"></span>
-</ng-template>
+<app-main-layout></app-main-layout>

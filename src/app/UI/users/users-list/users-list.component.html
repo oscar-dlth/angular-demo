@@ -1,3 +1,19 @@
 <div class="text-white" *ngFor="let item of users">
   {{ item.email }}
 </div>
+
+<span *ngIf="responsiveService.isTablet$ | async  as state">
+  is Tablet
+</span>
+
+<span *ngIf="responsiveService.isMobile$ | async  as state">
+  is Mobile
+</span>
+
+<span *ngIf="responsiveService.isDesktop$ | async as state">
+  is Desktop
+</span>
+
+<span *ngIf="responsiveService.isLarge$ | async as state">
+  is Large
+</span>

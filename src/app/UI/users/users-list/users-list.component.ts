@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetUsersService } from 'src/app/application/users/get-users-service';
+import { ResponsiveService } from '../../core/services/responsive.service';
 
 @Component({
   selector: 'app-users-list',
@@ -8,16 +8,9 @@ import { GetUsersService } from 'src/app/application/users/get-users-service';
 })
 export class UsersListComponent implements OnInit {
 
-  constructor(private getUsersService: GetUsersService) { }
+  constructor(public responsiveService: ResponsiveService) { }
 
   users : any[] =  [];
   ngOnInit(): void {
-    this.getUsersService.getAllUsers().subscribe((result)=>{
-      console.log(result);
-      this.users = result.rows;
-    },(error)=>{
-      console.log(error)
-    })
   }
-
 }

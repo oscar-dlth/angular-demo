@@ -1,11 +1,26 @@
-<app-side-navigation-bar></app-side-navigation-bar>
-<app-navigation-bar ></app-navigation-bar>
-<main>
-  <app-toogle-button
-    [isActive]="isSideNavCollapsed | async"
-    (toggle)="sideNavigationFacade.toogleSideNav()"
-    imgActive="assets/right-arrow.svg"
-    imgInactive="assets/left-arrow.svg"></app-toogle-button>
-  <router-outlet></router-outlet>
-</main>
+<div class="main-container">
+  <app-header></app-header>
+  <section class="principal-content">
+    <app-side-navigation-bar class="left-side"></app-side-navigation-bar>
+    <section class="right-side">
+      <app-toogle-button
+        [isActive]="(isCollapsed$ | async)"
+        (toggle)="sideNavigationFacade.toogleSideNav()"
+        imgActive="assets/right-arrow.svg"
+        imgInactive="assets/left-arrow.svg"
+        role="button"
+        aria-label="Toggle Side Navigation"></app-toogle-button>
+      <section
+        class="router-container"
+        [ngClass]="{
+          'mobile-width': responsiveService.isMobile$ | async,
+          'tablet-width': responsiveService.isTablet$ | async,
+          'desktop-width': responsiveService.isDesktop$ | async,
+          'large-width': responsiveService.isLarge$ | async
+        }">
+        <router-outlet></router-outlet>
+      </section>
+    </section>
+  </section>
 
+</div>

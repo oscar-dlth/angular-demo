@@ -1,6 +1,6 @@
-<aside [style.width.px]="with$ | async">
+<aside class="side-navigation" [ngClass]="{'is-collapsed': (isCollapsed$ | async) }">
   <ng-container *ngIf="!(isCollapsed$ | async)">
-    <ul>
+    <ul class="routes-container">
       <li class="cursor-pointer"> <a [routerLink]="['users']">Users</a></li>
       <li class="cursor-pointer"> <a >Products</a></li>
     </ul>

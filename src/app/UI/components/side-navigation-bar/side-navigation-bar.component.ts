@@ -15,8 +15,4 @@ export class SideNavigationBarComponent implements OnInit {
   get isCollapsed$() {
     return this.sideNavigationFacade.isSideNavigationBarCollapsed$;
   }
-
-  get with$(){
-    return this.sideNavigationFacade.sideNavigationBarWith$;
-  }
 }

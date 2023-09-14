@@ -7,6 +7,7 @@ import { UserGateway } from 'src/app/domain/models/user/gateway/user-gateway';
 import { UsersApiService } from 'src/app/infrastructure/driven-adapters/users-api/users-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { GetUsersService } from 'src/app/application/users/get-users-service';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { GetUsersService } from 'src/app/application/users/get-users-service';
     UsersListComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     UsersRoutingModule,
     HttpClientModule
   ],

@@ -35,8 +35,12 @@ main::-webkit-scrollbar
       align-items: flex-start
       flex: 1
       .router-container
+        overflow-y: scroll
         background: white
         padding: 20px
+        height: calc(100% - 40px)
+        &::-webkit-scrollbar
+          display: none
       app-toogle-button
         display: block
         cursor: pointer
@@ -48,7 +52,7 @@ main::-webkit-scrollbar
   app-navigation-bar
     width: 100%
 
-  app-side-navigation-bar
+  .left-side
     margin: 0px
     position: relative
 

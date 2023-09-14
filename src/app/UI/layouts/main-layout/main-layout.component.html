@@ -1,7 +1,7 @@
 <div class="main-container">
-  <app-navigation-bar></app-navigation-bar>
+  <app-header></app-header>
   <section class="principal-content">
-    <app-side-navigation-bar></app-side-navigation-bar>
+    <app-side-navigation-bar class="left-side"></app-side-navigation-bar>
     <section class="right-side">
       <app-toogle-button
         [isActive]="(isCollapsed$ | async)"
@@ -22,4 +22,5 @@
       </section>
     </section>
   </section>
+
 </div>

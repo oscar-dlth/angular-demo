@@ -1,58 +1,42 @@
 @use "../../../../global-styles/variables/main-layout"
 
-main::-webkit-scrollbar
-  display: none
-
-.mobile-width
-  width: main-layout.$main-width-mobile
-
-.tablet-width
-  width: main-layout.$main-width-tablet
-
-.desktop-width
-  width: main-layout.$main-width-desktop
-
-.large-width
-  width: main-layout.$main-width-large
-
 .main-container
   min-width: 200px
   display: flex
   flex-direction: column
   height: 100vh
-
+  &::-webkit-scrollbar
+    display: none
   .principal-content
+    z-index: 1
     width: 100%
     display: flex
     height: 100%
     overflow: hidden
 
+    .left-side
+      height: calc( 100vh - 50px)
+      margin: 0px
+      position: relative
     .right-side
       position: relative
-      background: grey
+      background: #363636
       display: flex
-      justify-content: center
-      align-items: flex-start
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
       flex: 1
+      height: calc(100vh - 50px)
+      overflow-y: scroll
       .router-container
-        overflow-y: scroll
-        background: white
         padding: 20px
-        height: calc(100% - 40px)
+        flex: 1
         &::-webkit-scrollbar
           display: none
-      app-toogle-button
-        display: block
-        cursor: pointer
-        position: absolute
-        top: 20px
-        left: -10px
-        z-index: 3
 
-  app-navigation-bar
-    width: 100%
+.header
+  width: 100%
 
-  .left-side
-    margin: 0px
-    position: relative
+
+
 

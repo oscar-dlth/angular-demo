@@ -1,4 +1,13 @@
 <aside class="side-navigation" [ngClass]="{'is-collapsed': (isCollapsed$ | async) }">
+  <span class="collapse-button">
+    <app-toogle-button
+      [isActive]="(isCollapsed$ | async)"
+      (toggle)="sideNavigationFacade.toogleSideNav()"
+      imgActive="assets/right-arrow.svg"
+      imgInactive="assets/left-arrow.svg"
+      role="button"
+      aria-label="Toggle Side Navigation"/>
+  </span>
   <ng-container *ngIf="!(isCollapsed$ | async)">
     <ul class="routes-container">
       <li class="cursor-pointer"> <a [routerLink]="['users']">Users</a></li>

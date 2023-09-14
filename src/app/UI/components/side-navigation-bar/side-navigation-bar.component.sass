@@ -3,15 +3,31 @@
   display: flex
   z-index: 2
   overflow-y: scroll
-  position: relative
+  position: initial
   height: 100%
-  border-right: rgba(168, 179, 207, 0.2) solid 1px
-  transition: width 0.5s ease, background 0.5s ease
+  border-right: gray solid 1px
+  transition: width 0.25s ease, background 0.25s ease, border-right 0.25s ease
   width: 250px
+  .collapse-button
+    display: inline-block
+    cursor: pointer
+    position: absolute
+    top: 20px
+    right: -15px
+    z-index: 3
+    transition: right 0.25s ease
 
 .is-collapsed
   width: 0px
-  background: gray
+  background: #363636
+  border-right: #363636 solid 1px
+  .collapse-button
+    display: inline-block
+    cursor: pointer
+    position: absolute
+    top: 20px
+    right: -30px
+    z-index: 3
 
 
 .side-navigation::-webkit-scrollbar
@@ -37,4 +53,4 @@
       display: block
       &:hover
         background: #b4b4b4
-      transition: background 0.5s ease
+      transition: background 0.25s ease

@@ -1,15 +1,8 @@
 <div class="main-container">
-  <app-header></app-header>
+  <app-header class="header"/>
   <section class="principal-content">
-    <app-side-navigation-bar class="left-side"></app-side-navigation-bar>
+    <app-side-navigation-bar class="left-side"/>
     <section class="right-side">
-      <app-toogle-button
-        [isActive]="(isCollapsed$ | async)"
-        (toggle)="sideNavigationFacade.toogleSideNav()"
-        imgActive="assets/right-arrow.svg"
-        imgInactive="assets/left-arrow.svg"
-        role="button"
-        aria-label="Toggle Side Navigation"></app-toogle-button>
       <section
         class="router-container"
         [ngClass]="{
@@ -20,7 +13,7 @@
         }">
         <router-outlet></router-outlet>
       </section>
+      <app-footer class="footer"/>
     </section>
   </section>
-
 </div>

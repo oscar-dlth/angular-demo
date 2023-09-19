@@ -1,0 +1,72 @@
+@import "./dark.scss";
+@import "./light.scss";
+
+@function map-get-value($map, $key){
+  @if map-has-key($map, $key){
+    @return map-get($map,$key)
+  }
+  @else{
+    @error 'Error: Specified key #{$key} does not exist in the mapping #{map-get($map, name)}'
+  }
+}
+
+@mixin set-theme($map){
+  .header{
+    background-color: map-get-value($map,header-bg-color);
+    color: map-get-value($map, header-text-color);
+    border-bottom-color: map-get-value($map, header-border-botom-color);
+    a{
+      &:hover{
+        background: map-get-value($map, header-link-hover-bg-color);
+      }
+    }
+  }
+
+  .left-side{
+    background-color: map-get-value($map,left-side-bg-color);
+    color: map-get-value($map, left-side-text-color);
+    .side-navigation{
+      border-right-color: map-get-value($map, left-side-border-right-color);
+    }
+    a{
+      &:hover{
+        background: map-get-value($map, left-side-link-hover-bg-color);
+      }
+    }
+    .is-collapsed{
+      background-color: map-get-value($map,left-side-bg-color);
+      border-right-color: map-get-value($map, left-side-border-right-color) ;
+    }
+
+    .collapse-button{
+      background: map-get-value($map, left-side-collapse-button-bg-color);
+    }
+  }
+
+  .right-side{
+    background-color: map-get-value($map,right-side-bg-color);
+    color: map-get-value($map, right-side-text-color);
+  }
+
+  .footer{
+    background-color: map-get-value($map,footer-bg-color);
+    color: map-get-value($map, footer-text-color);
+    border-top-color: map-get-value($map, footer-border-top-color);
+  }
+
+  .nav-link{
+    color: map-get-value($map, left-side-text-color);
+  }
+
+  .card{
+    background-color: map-get-value($map, right-side-card-bg-color);
+  }
+}
+
+.light-theme {
+  @include set-theme($light-value-theme);
+}
+
+.dark-theme{
+  @include set-theme($dark-value-theme);
+}

@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { ThemeService } from './UI/core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  constructor(){
+  constructor(public themeService: ThemeService){
 
   }
 }

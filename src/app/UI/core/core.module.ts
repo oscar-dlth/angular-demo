@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ResponsiveService } from './services/responsive.service';
+import { ThemeService } from './services/theme.service';
 
 
 
@@ -13,7 +14,8 @@ import { ResponsiveService } from './services/responsive.service';
     CommonModule
   ],
   providers: [
-    ResponsiveService
+    ResponsiveService,
+    ThemeService
   ]
 })
 export class CoreModule { }

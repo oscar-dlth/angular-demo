@@ -1,5 +1,7 @@
-<section class="footer">
-  <span>This is a demo</span>
-  <span>Oscar de la torre hernandez</span>
-  <span>2023</span>
+<section>
+  <div  class="footer" [ngClass]="{ 'is-tablet-or-mobile': (responsiveService.isTabletOrMobile$ | async) }">
+    <span>This is a demo</span>
+    <span>Oscar de la torre hernandez</span>
+    <span>2023</span>
+  </div>
 </section>

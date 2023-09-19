@@ -1,8 +1,11 @@
-<header class="header">
-  <h1 class="cursor-pointer" [routerLink]="['/']" >Angular Demo</h1>
+<header class="header" [ngClass]="{'justify-content-center': (resposiveService.isMobile$ | async)}">
+  <h1 class="cursor-pointer home-link" [routerLink]="['/']" >Angular Demo</h1>
   <ul>
-    <li class="cursor-pointer"> <a [routerLink]="['users']">Users</a></li>
-    <li class="cursor-pointer"> <a>Products</a></li>
-    <li class="cursor-pointer"> <a>Login</a></li>
+    <ng-container *ngIf="!(resposiveService.isMobile$ | async)">
+      <li><input [value]="themeService.isDarkTheme$ | async" #themeCheck (change)="updateTheme($event)" type="checkbox"> Dark </li>
+      <li class="cursor-pointer"> <a class="nav-link" [routerLink]="['users']">Users</a></li>
+      <li class="cursor-pointer"> <a class="nav-link">Products</a></li>
+      <li class="cursor-pointer"> <a class="nav-link">Login</a></li>
+    </ng-container>
   </ul>
 </header>

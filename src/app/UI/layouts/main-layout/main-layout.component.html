@@ -1,9 +1,9 @@
 <div class="main-container">
   <app-header class="header"/>
   <section class="principal-content">
-    <app-side-navigation-bar class="left-side"/>
+    <app-side-navigation-bar class="left-side" [ngClass]="{'is-mobile': responsiveService.isTabletOrMobile$ | async}"/>
     <section class="right-side">
-      <section
+      <main
         class="router-container"
         [ngClass]="{
           'mobile-width': responsiveService.isMobile$ | async,
@@ -11,8 +11,8 @@
           'desktop-width': responsiveService.isDesktop$ | async,
           'large-width': responsiveService.isLarge$ | async
         }">
-        <router-outlet></router-outlet>
-      </section>
+        <router-outlet/>
+      </main>
       <app-footer class="footer"/>
     </section>
   </section>

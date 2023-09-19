@@ -11,6 +11,7 @@ export class ToogleButtonComponent implements OnInit {
   @Input() isActive : Boolean = true;
   @Input() imgActive: string = '';
   @Input() imgInactive: string = '';
+  @Input() customClass: string;
 
   constructor() { }
 

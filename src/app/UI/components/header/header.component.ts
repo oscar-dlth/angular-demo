@@ -13,9 +13,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  updateTheme(event: any){
-    this.themeService.updateTheme(event.target.checked)
-  }
-
 }

@@ -2,16 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ResponsiveService } from './services/responsive.service';
 import { ThemeService } from './services/theme.service';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [
     ResponsiveService,

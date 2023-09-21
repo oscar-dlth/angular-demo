@@ -1,13 +1,32 @@
-.toogle-button
-  border-radius: 10px
-  width: 28px
-  height: 28px
-  opacity: 0.6
-  display: block
+.toggle-container
   display: flex
-  justify-content: center
-  align-items: flex-center
+  align-items: center
+  position: relative
+  cursor: pointer
+  padding: 2px
+  background: lightgray
+  width: 40px
+  height: 20px
+  border-radius: 50px
+  transition: background 0.25s ease
 
-  img
-    width: 50%
-    height: auto
+  .state-indicator
+    position: absolute
+    display: block
+    background: white
+    width: 19px
+    height: 19px
+    border-radius: 100%
+    left: 3px
+    transition: left 0.25s ease
+
+.is-active
+  .toggle-container
+    background: #40b872
+    .state-indicator
+      left: calc(21px)
+
+.control-container
+  display: flex
+  align-items: center
+  column-gap: 5px

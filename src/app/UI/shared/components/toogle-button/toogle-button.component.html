@@ -1,3 +1,6 @@
-<span  class="toogle-button {{ customClass }}" (click)="onToggle()">
-  <img [src]="imgSource" alt="close open">
-</span>
+<div class="control-container" [ngClass]="{'is-active': isActive }">
+  Dark
+  <div class="toggle-container" (click)="toggleClick()">
+    <span class="state-indicator"></span>
+  </div>
+</div>

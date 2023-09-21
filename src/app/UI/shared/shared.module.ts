@@ -3,21 +3,25 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ToogleButtonComponent } from './components/toogle-button/toogle-button.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ButtonIconComponent } from './components/button-icon/button-icon.component';
 
 
 
 @NgModule({
   declarations: [
-    ToogleButtonComponent
+    ToogleButtonComponent,
+    ButtonIconComponent
   ],
   imports: [
     RouterModule,
-    LayoutModule
+    LayoutModule,
+    CommonModule
   ],
   exports:[
     CommonModule,
     RouterModule,
-    ToogleButtonComponent
+    ToogleButtonComponent,
+    ButtonIconComponent
   ]
 })
 export class SharedModule { }

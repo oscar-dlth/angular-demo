@@ -1,19 +1,15 @@
-<div class="text-white" *ngFor="let item of users">
-  {{ item.email }}
-</div>
+<app-card>
+  <h2 header >Users</h2>
+  <app-table body
+    [styles]="'table-style'"
+    [columns]="(isMobile$ | async) ? ['code', 'nickName', 'action']: ['id', 'code', 'nickName', 'action']"
+    [columnsText]="{id: 'Identity', code: 'Code', nickName: 'Nick Name', action: 'Action'}"
+    [dataCellCustomTemplates]="{ action: actionTemplate }"
+    [rows]="dummyData"/>
+  <article footer> <span>Footer</span> </article>
+</app-card>
 
-<span *ngIf="responsiveService.isTablet$ | async  as state">
-  is Tablet
-</span>
 
-<span *ngIf="responsiveService.isMobile$ | async  as state">
-  is Mobile
-</span>
-
-<span *ngIf="responsiveService.isDesktop$ | async as state">
-  is Desktop
-</span>
-
-<span *ngIf="responsiveService.isLarge$ | async as state">
-  is Large
-</span>
+<ng-template #actionTemplate let-data>
+  <button (click)="edit(data)">Log</button>
+</ng-template>

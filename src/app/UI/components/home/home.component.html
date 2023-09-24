@@ -1,1 +1,13 @@
-<article class="card"></article>
+<article class="card">
+  <app-table
+    [styles]="'table-style'"
+    [columns]="(isMobile$ | async) ? ['code', 'nickName', 'action']: ['id', 'code', 'nickName', 'action']"
+    [columnsText]="{id: 'Identity', code: 'Code', nickName: 'Nick Name', action: 'Action'}"
+    [dataCellCustomTemplates]="{ action: actionTemplate }"
+    [rows]="dummyData"/>
+</article>
+
+
+<ng-template #actionTemplate let-data>
+  <button (click)="edit(data)">Log</button>
+</ng-template>

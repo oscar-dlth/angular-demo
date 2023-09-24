@@ -4,13 +4,15 @@ import { RouterModule } from '@angular/router';
 import { ToogleButtonComponent } from './components/toogle-button/toogle-button.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ButtonIconComponent } from './components/button-icon/button-icon.component';
+import { TableComponent } from './components/table/table.component';
 
 
 
 @NgModule({
   declarations: [
     ToogleButtonComponent,
-    ButtonIconComponent
+    ButtonIconComponent,
+    TableComponent
   ],
   imports: [
     RouterModule,
@@ -21,7 +23,8 @@ import { ButtonIconComponent } from './components/button-icon/button-icon.compon
     CommonModule,
     RouterModule,
     ToogleButtonComponent,
-    ButtonIconComponent
+    ButtonIconComponent,
+    TableComponent
   ]
 })
 export class SharedModule { }

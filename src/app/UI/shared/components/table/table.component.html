@@ -1,0 +1,31 @@
+<div class="{{ styles }} h-scroll">
+  <table cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th scope="column" *ngFor="let column of columns">
+          <ng-container [ngTemplateOutlet]="headerCellCustomTemplates[column] || defaultHeaderTemplate"
+            [ngTemplateOutletContext]="{ $implicit: column }" />
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of rows">
+        <tr>
+          <td *ngFor="let column of columns">
+            <ng-container [ngTemplateOutlet]="dataCellCustomTemplates[column] || defaultDataTemplate"
+              [ngTemplateOutletContext]="{ $implicit: item, key: column }"/>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+</table>
+
+</div>
+
+<ng-template #defaultHeaderTemplate let-column>
+    {{ columnsText[column] || column }}
+</ng-template>
+
+<ng-template #defaultDataTemplate let-data let-key="key">
+    {{ data[key] }}
+</ng-template>

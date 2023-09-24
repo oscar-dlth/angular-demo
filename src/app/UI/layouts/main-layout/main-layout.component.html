@@ -1,7 +1,7 @@
 <div class="main-container">
   <app-header class="header"/>
   <section class="principal-content">
-    <app-side-navigation-bar class="left-side" [ngClass]="{'is-mobile': responsiveService.isTabletOrMobile$ | async}"/>
+    <app-side-navigation-bar class="left-side" [ngClass]="{'is-mobile': responsiveService.isMobile$ | async}"/>
     <section class="right-side">
       <main
         class="router-container"

@@ -5,6 +5,7 @@ import { ToogleButtonComponent } from './components/toogle-button/toogle-button.
 import { LayoutModule } from '@angular/cdk/layout';
 import { ButtonIconComponent } from './components/button-icon/button-icon.component';
 import { TableComponent } from './components/table/table.component';
+import { CardComponent } from './components/card/card.component';
 
 
 
@@ -12,7 +13,8 @@ import { TableComponent } from './components/table/table.component';
   declarations: [
     ToogleButtonComponent,
     ButtonIconComponent,
-    TableComponent
+    TableComponent,
+    CardComponent
   ],
   imports: [
     RouterModule,
@@ -24,7 +26,8 @@ import { TableComponent } from './components/table/table.component';
     RouterModule,
     ToogleButtonComponent,
     ButtonIconComponent,
-    TableComponent
+    TableComponent,
+    CardComponent
   ]
 })
 export class SharedModule { }

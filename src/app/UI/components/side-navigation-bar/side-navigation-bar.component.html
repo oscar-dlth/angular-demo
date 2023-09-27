@@ -12,6 +12,9 @@
   <ng-container *ngIf="!(isCollapsed$ | async)">
     <ul class="routes-container">
       <li class="cursor-pointer"> <a class="nav-link" [routerLink]="['users']">Users</a></li>
+      <li class="cursor-pointer"> <a class="nav-link" [routerLink]="['products']">Products</a></li>
+      <li class="cursor-pointer"> <a class="nav-link" [routerLink]="['categories']">Categories</a></li>
+      <li class="cursor-pointer"> <a class="nav-link" [routerLink]="['brands']">Brands</a></li>
     </ul>
   </ng-container>
 </aside>

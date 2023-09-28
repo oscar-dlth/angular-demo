@@ -8,7 +8,7 @@ import { User } from "src/app/domain/models/user/user";
   providedIn: 'root'
 })
 
-export class GetUsersService {
+export class GetUsersUseCase {
   constructor( private _userGateWay: UserGateway) {}
 
   getAllUsers () : Observable <BasePagedModel<User>> {

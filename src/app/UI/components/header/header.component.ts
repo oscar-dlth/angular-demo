@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '../../core/services/theme.service';
-import { ResponsiveService } from '../../core/services/responsive.service';
+import { ResponsiveService } from '../../modules/core/services/responsive.service';
+import { ThemeService } from '../../modules/core/services/theme.service';
 
 @Component({
   selector: 'app-header',

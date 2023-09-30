@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SideNavigationFacadeService } from './facade/side-navigation-facade.service';
-import { ResponsiveService } from '../../core/services/responsive.service';
+import { ResponsiveService } from '../../modules/core/services/responsive.service';
 
 @Component({
   selector: 'app-side-navigation-bar',

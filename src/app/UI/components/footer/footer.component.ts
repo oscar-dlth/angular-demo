@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { ResponsiveService } from '../../core/services/responsive.service';
-import { Observable, combineLatest, merge } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { ResponsiveService } from '../../modules/core/services/responsive.service';
 
 @Component({
   selector: 'app-footer',

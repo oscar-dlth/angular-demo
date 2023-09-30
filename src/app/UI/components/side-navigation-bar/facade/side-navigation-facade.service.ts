@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SideNavigationStateService } from '../state/side-navigation-state.service';
-import { ResponsiveService } from 'src/app/UI/core/services/responsive.service';
+import { ResponsiveService } from 'src/app/UI/modules/core/services/responsive.service';
 
 @Injectable({
   providedIn: 'root'

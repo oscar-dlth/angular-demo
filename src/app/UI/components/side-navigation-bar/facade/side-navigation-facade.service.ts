@@ -1,25 +1,26 @@
 import { Injectable } from '@angular/core';
-import { SideNavigationStateService } from '../state/side-navigation-state.service';
 import { ResponsiveService } from 'src/app/UI/modules/core/services/responsive.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { collapse, toggle } from 'src/app/UI/app-state/actions/side-nav-actions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SideNavigationFacadeService {
 
-  constructor(private sideNavigationState: SideNavigationStateService, private responsiveService: ResponsiveService) {
-    this.responsiveService.isMobile$.subscribe( response=>{
+  public isSideNavigationBarCollapsed$: Observable<boolean>;
+  constructor(private store: Store<{ sidenav: boolean }>, private responsiveService: ResponsiveService) {
+    this.isSideNavigationBarCollapsed$ = store.select('sidenav')
+    this.responsiveService.isMobile$.subscribe( response =>{
       if(response){
-        sideNavigationState.collapseSideNavigation();
+        store.dispatch(collapse());
       }
     });
-  }
 
-  get isSideNavigationBarCollapsed$(){
-    return this.sideNavigationState.isCollapsed$;
   }
 
   toogleSideNav(){
-    this.sideNavigationState.isCollapsed ? this.sideNavigationState.expandSideNavigation() : this.sideNavigationState.collapseSideNavigation();
+    this.store.dispatch(toggle())
   }
 }

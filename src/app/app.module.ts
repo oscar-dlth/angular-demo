@@ -9,6 +9,8 @@ import { FooterComponent } from './UI/components/footer/footer.component';
 import { HeaderComponent } from './UI/components/header/header.component';
 import { CoreModule } from './UI/modules/core/core.module';
 import { SharedModule } from './UI/modules/shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { sideNavReducer } from './UI/app-state/reducers/side-nav-reducer';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { SharedModule } from './UI/modules/shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot({ sidenav: sideNavReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

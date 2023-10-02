@@ -9,7 +9,8 @@ import { BrandsModule } from './UI/modules/brands/brands.module';
 const routes: Routes = [
   {
     path:'',
-    component: HomeComponent
+    component: HomeComponent,
+    title: 'Angular Demo'
   },
   {
     path:'users',

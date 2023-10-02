@@ -1,7 +1,9 @@
 <header class="header" [ngClass]="{'justify-content-center': (resposiveService.isMobile$ | async)}">
   <h1 class="cursor-pointer home-link" [routerLink]="['/']" >Angular Demo</h1>
   <ul>
-    <li><app-toogle-button [ngModel]="themeService.isDarkTheme$ | async" (ngModelChange)="this.themeService.updateTheme($event)"></app-toogle-button></li>
+    <app-toogle-button
+      [ngModel]="themeService.isDarkTheme$ | async"
+      (ngModelChange)="this.themeService.updateTheme($event)"/>
     <ng-container *ngIf="!(resposiveService.isMobile$ | async)">
       <li class="cursor-pointer"> <a class="nav-link" [routerLink]="['users']">Users</a></li>
     </ng-container>

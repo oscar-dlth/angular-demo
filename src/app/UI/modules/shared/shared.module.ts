@@ -6,6 +6,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { ButtonIconComponent } from './components/button-icon/button-icon.component';
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from './components/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,7 +20,8 @@ import { CardComponent } from './components/card/card.component';
   imports: [
     RouterModule,
     LayoutModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports:[
     CommonModule,
@@ -27,7 +29,8 @@ import { CardComponent } from './components/card/card.component';
     ToogleButtonComponent,
     ButtonIconComponent,
     TableComponent,
-    CardComponent
+    CardComponent,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

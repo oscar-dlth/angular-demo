@@ -11,6 +11,7 @@ import { CoreModule } from './UI/modules/core/core.module';
 import { SharedModule } from './UI/modules/shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { sideNavReducer } from './UI/state/reducers/side-nav-reducer';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { sideNavReducer } from './UI/state/reducers/side-nav-reducer';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    StoreModule.forRoot({ sidenav: sideNavReducer })
+    StoreModule.forRoot({ sidenav: sideNavReducer }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

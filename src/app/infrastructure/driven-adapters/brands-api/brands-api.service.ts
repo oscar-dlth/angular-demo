@@ -9,7 +9,7 @@ import { BasePagedModel } from 'src/app/domain/models/common/BasePagedModel';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriesApiService extends BrandGateway {
+export class BrandsApiService extends BrandGateway {
   constructor(private http: HttpClient ) {
     super();
   }

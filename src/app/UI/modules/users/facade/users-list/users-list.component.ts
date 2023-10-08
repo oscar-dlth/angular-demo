@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponsiveService } from '../../core/services/responsive.service';
+import { ResponsiveService } from '../../../core/services/responsive.service';
 
 @Component({
   selector: 'app-users-list',

@@ -1,14 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
+import { ResponsiveService } from '../../modules/core/services/responsive.service';
+import { CommonModule } from '@angular/common';
+import { of } from 'rxjs';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
+  let responsiveService = jasmine.createSpyObj('ResponsiveService', ['isTabletOrMobile$']);
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FooterComponent]
+      imports:[
+        CommonModule
+      ],
+      declarations: [FooterComponent],
+      providers: [
+        ResponsiveService,
+      ]
     });
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
@@ -16,6 +26,7 @@ describe('FooterComponent', () => {
   });
 
   it('should create', () => {
+    responsiveService.isTabletOrMobile$.and.returnValue(of(false));
     expect(component).toBeTruthy();
   });
 });

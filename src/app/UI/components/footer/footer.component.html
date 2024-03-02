@@ -1,5 +1,5 @@
 <section>
-  <div  class="footer" [ngClass]="{ 'is-tablet-or-mobile': (responsiveService.isTabletOrMobile$ | async) }">
+  <div  class="footer" [ngClass]="{ 'is-tablet-or-mobile': (isNotDesktop$() | async) }">
     <span>This is a demo</span>
     <span>Oscar de la torre hernandez</span>
     <span>2023</span>

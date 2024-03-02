@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ResponsiveService } from '../../modules/core/services/responsive.service';
+import { FooterFacadeService } from './facade/footer-facade.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-footer',
@@ -7,5 +9,10 @@ import { ResponsiveService } from '../../modules/core/services/responsive.servic
   styleUrls: ['./footer.component.sass']
 })
 export class FooterComponent {
-  constructor(public responsiveService: ResponsiveService) {}
+
+  constructor(public footerFacade: FooterFacadeService) {}
+
+  public isNotDesktop$(): Observable<Boolean>{
+    return this.footerFacade.isNotDesktop$().pipe(map(isNotDesktop => isNotDesktop));
+  }
 }

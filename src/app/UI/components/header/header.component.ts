@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponsiveService } from '../../modules/core/services/responsive.service';
-import { ThemeService } from '../../modules/core/services/theme.service';
+import { HeaderFacadeService } from './facade/header-facade.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +9,24 @@ import { ThemeService } from '../../modules/core/services/theme.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public themeService: ThemeService, public resposiveService: ResponsiveService) { }
+  constructor( public headerFacadeService: HeaderFacadeService) { }
 
   ngOnInit(): void {
+  }
+
+  public getAlignClass$(): Observable<string>{
+    return this.headerFacadeService.getAlignClass$();
+  }
+
+  public canDisplayUsersLink$(){
+    return this.headerFacadeService.canDisplayUsersLink$();
+  }
+
+  public updateTheme(isDarkTheme: boolean){
+    this.headerFacadeService.updateTheme(isDarkTheme)
+  }
+
+  public isDarkTheme$(){
+    return this.headerFacadeService.isDarkTheme$();
   }
 }

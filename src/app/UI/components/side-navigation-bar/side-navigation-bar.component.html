@@ -2,7 +2,7 @@
   <span class="collapse-button-container">
     <app-button-icon
       [isActive]="(isCollapsed$ | async)"
-      (toggle)="sideNavigationFacade.toogleSideNav()"
+      (toggle)="toggleSideNav()"
       customClass="collapse-button"
       imgActive="assets/right-arrow.svg"
       imgInactive="assets/left-arrow.svg"

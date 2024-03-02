@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SideNavigationFacadeService } from './facade/side-navigation-facade.service';
-import { ResponsiveService } from '../../modules/core/services/responsive.service';
 
 @Component({
   selector: 'app-side-navigation-bar',
@@ -8,12 +7,18 @@ import { ResponsiveService } from '../../modules/core/services/responsive.servic
   styleUrls: ['./side-navigation-bar.component.sass']
 })
 export class SideNavigationBarComponent implements OnInit {
-  constructor(public sideNavigationFacade: SideNavigationFacadeService, public resposiveService: ResponsiveService) { }
+  constructor(public sideNavigationFacade: SideNavigationFacadeService) {
+
+  }
 
   ngOnInit(): void {
   }
 
   get isCollapsed$() {
-    return this.sideNavigationFacade.isSideNavigationBarCollapsed$;
+    return this.sideNavigationFacade.isCollapsed$;
+  }
+
+  toggleSideNav(){
+    this.sideNavigationFacade.toggleSideNav();
   }
 }

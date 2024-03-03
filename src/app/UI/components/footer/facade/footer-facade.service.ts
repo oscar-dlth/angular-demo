@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class FooterFacadeService {
 
-  constructor(private store: Store<{ sidenav: boolean }>, private responsiveService: ResponsiveService) {
+  constructor(private responsiveService: ResponsiveService) {
 
   }
 

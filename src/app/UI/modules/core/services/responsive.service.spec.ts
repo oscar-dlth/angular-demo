@@ -9,7 +9,6 @@ describe('ResponsiveService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers:[
-        ResponsiveService,
         { provide: BreakpointObserver, useValue: breakpointObserverSpy },
       ]
     });

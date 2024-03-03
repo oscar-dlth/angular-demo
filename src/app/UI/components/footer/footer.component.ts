@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FooterFacadeService } from './facade/footer-facade.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-footer',
@@ -10,9 +9,9 @@ import { map } from 'rxjs/operators';
 })
 export class FooterComponent {
 
-  constructor(public footerFacade: FooterFacadeService) {}
+  constructor(public footerFacadeService: FooterFacadeService) {}
 
   public isNotDesktop$(): Observable<Boolean>{
-    return this.footerFacade.isNotDesktop$().pipe(map(isNotDesktop => isNotDesktop));
+    return this.footerFacadeService.isNotDesktop$();
   }
 }

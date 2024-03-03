@@ -4,7 +4,10 @@ import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Distribution } from 'src/app/UI/common/enums';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class ResponsiveService {
 
   constructor(private breakpointObserver: BreakpointObserver) {}

@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class MainLayoutFacadeService {
   isSideNavigationBarCollapsed$;
-  constructor(private store: Store<{ sidenav: boolean }>, private responsiveService: ResponsiveService) {
+  constructor(store: Store<{ sidenav: boolean }>, private responsiveService: ResponsiveService) {
     this.isSideNavigationBarCollapsed$ = store.select('sidenav')
   }
 

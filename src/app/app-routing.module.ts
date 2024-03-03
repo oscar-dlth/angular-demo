@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './UI/components/home/home.component';
-import { UsersModule } from './UI/modules/users/users.module';
-import { ProductsModule } from './UI/modules/products/products.module';
-import { CategoriesModule } from './UI/modules/categories/categories.module';
-import { BrandsModule } from './UI/modules/brands/brands.module';
 
 const routes: Routes = [
   {
@@ -35,7 +31,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

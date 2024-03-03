@@ -1,8 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-
 import { SideNavigationFacadeService } from './side-navigation-facade.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Store, StoreModule } from '@ngrx/store';
+import {  StoreModule } from '@ngrx/store';
 import { ResponsiveService } from 'src/app/UI/modules/core/services/responsive.service';
 import { of } from 'rxjs';
 import { sideNavReducer } from 'src/app/UI/state/reducers/side-nav-reducer';

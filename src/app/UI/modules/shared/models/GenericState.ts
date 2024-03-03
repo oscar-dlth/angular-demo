@@ -1,7 +1,7 @@
 
 export class GenericState<T>{
   model?: T;
-  list: T[];
+  list?: T[];
   currentPage: number;
   pageSize: number;
   keyWord: string;

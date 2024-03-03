@@ -1,23 +1,28 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
-import { ResponsiveService } from '../../modules/core/services/responsive.service';
 import { CommonModule } from '@angular/common';
 import { of } from 'rxjs';
+import { FooterFacadeService } from './facade/footer-facade.service';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
-  let responsiveService = jasmine.createSpyObj('ResponsiveService', ['isTabletOrMobile$']);
+  let footerFacadeServiceSpy = jasmine.createSpyObj('FooterFacadeService', ['isNotDesktop$']);
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports:[
         CommonModule
       ],
-      declarations: [FooterComponent],
+      declarations: [
+        FooterComponent
+      ],
       providers: [
-        ResponsiveService,
+        {
+          provide: FooterFacadeService,
+          useValue: footerFacadeServiceSpy
+        }
       ]
     });
     fixture = TestBed.createComponent(FooterComponent);
@@ -26,7 +31,7 @@ describe('FooterComponent', () => {
   });
 
   it('should create', () => {
-    responsiveService.isTabletOrMobile$.and.returnValue(of(false));
+    footerFacadeServiceSpy.isNotDesktop$.and.returnValue(of(false));
     expect(component).toBeTruthy();
   });
 });

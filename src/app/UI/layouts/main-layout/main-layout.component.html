@@ -1,16 +1,9 @@
 <div class="main-container">
   <app-header class="header"/>
   <section class="principal-content">
-    <app-side-navigation-bar class="left-side" [ngClass]="{'is-mobile': responsiveService.isMobile$ | async}"/>
+    <app-side-navigation-bar class="left-side {{ mainLayoutFacadeService.getMobileClassIfDistributionIsMobile$() | async }}"/>
     <section class="right-side">
-      <main
-        class="router-container"
-        [ngClass]="{
-          'mobile-width': responsiveService.isMobile$ | async,
-          'tablet-width': responsiveService.isTablet$ | async,
-          'desktop-width': responsiveService.isDesktop$ | async,
-          'large-width': responsiveService.isLarge$ | async
-        }">
+      <main class="router-container {{ mainLayoutFacadeService.getWithClass$() | async }}">
         <router-outlet/>
       </main>
       <app-footer class="footer"/>

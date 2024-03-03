@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SideNavigationFacadeService } from '../../components/side-navigation-bar/facade/side-navigation-facade.service';
-import { ResponsiveService } from '../../modules/core/services/responsive.service';
+import { MainLayoutFacadeService } from './facade/main-layout-facade.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -10,20 +9,18 @@ import { ResponsiveService } from '../../modules/core/services/responsive.servic
 })
 export class MainLayoutComponent implements OnInit {
 
-  constructor(public sideNavigationFacade: SideNavigationFacadeService, public responsiveService: ResponsiveService){
-
-  }
+  constructor(public mainLayoutFacadeService: MainLayoutFacadeService){}
 
   ngOnInit(): void {
 
   }
 
   get isCollapsed$() {
-    return this.sideNavigationFacade.isSideNavigationBarCollapsed$;
+    return this.mainLayoutFacadeService.isSideNavigationBarCollapsed$;
   }
 
   get isSideNavCollapsed() : Observable<Boolean>{
-    return this.sideNavigationFacade.isSideNavigationBarCollapsed$;
+    return this.mainLayoutFacadeService.isSideNavigationBarCollapsed$;
   }
 
 }

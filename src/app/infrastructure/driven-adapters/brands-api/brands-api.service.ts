@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Brand } from 'src/app/domain/models/brands/brand';
 import { BrandGateway } from 'src/app/domain/models/brands/gateway/brand-gateway';
 import { BasePagedModel } from 'src/app/domain/models/common/BasePagedModel';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class BrandsApiService extends BrandGateway {
   }
 
   getAll(): Observable<BasePagedModel<Brand>> {
-    return this.http.get<BasePagedModel<Brand>>('https://ecommerce-zad1-dev.fl0.io/api/products?keyWord=&size=6&page=0').pipe( map( (response:any) => {
+    return this.http.get<BasePagedModel<Brand>>(`${environment.apiBaseUrl}/api/products?keyWord=&size=6&page=0`).pipe( map( (response:any) => {
       return response.data;
     }));
   }

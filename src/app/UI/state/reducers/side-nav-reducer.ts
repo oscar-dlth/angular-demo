@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { collapse, expand, toggle } from "../actions/side-nav-actions";
 
-export const initialState = false;
+export const initialState = true;
 
 export const sideNavReducer = createReducer(
   initialState,

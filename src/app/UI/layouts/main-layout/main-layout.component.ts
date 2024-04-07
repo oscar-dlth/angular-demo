@@ -14,13 +14,4 @@ export class MainLayoutComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-  get isCollapsed$() {
-    return this.mainLayoutFacadeService.isSideNavigationBarCollapsed$;
-  }
-
-  get isSideNavCollapsed() : Observable<Boolean>{
-    return this.mainLayoutFacadeService.isSideNavigationBarCollapsed$;
-  }
-
 }

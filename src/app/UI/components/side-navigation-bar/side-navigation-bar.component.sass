@@ -1,3 +1,5 @@
+@use "../../../../global-styles/variables/main-layout"
+  
 .side-navigation
   display: flex
   z-index: 2
@@ -7,7 +9,7 @@
   border-right-style: solid
   border-right-width: 1px
   transition: width 0.25s ease, background 0.25s ease, border-right 0.25s ease
-  width: 250px
+  width: main-layout.$side-navigation-width
   .collapse-button-container
     display: inline-block
     cursor: pointer

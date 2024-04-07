@@ -30,7 +30,7 @@ export class MainLayoutFacadeService {
     }));
   }
 
-  public getWithClass$(): Observable<string>{
+  public getWidthClass$(): Observable<string>{
     const distributionClases = {
       [Distribution.Desktop]: 'desktop-width',
       [Distribution.Tablet]: 'tablet-width',

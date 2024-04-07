@@ -2,8 +2,8 @@
   <app-header class="header"/>
   <section class="principal-content">
     <app-side-navigation-bar class="left-side {{ mainLayoutFacadeService.getMobileClassIfDistributionIsMobile$() | async }}"/>
-    <section class="right-side">
-      <main class="router-container {{ mainLayoutFacadeService.getWithClass$() | async }}">
+    <section class="right-side {{ mainLayoutFacadeService.getMobileClassIfDistributionIsMobile$() | async }}">
+      <main class="router-container {{ mainLayoutFacadeService.getMobileClassIfDistributionIsMobile$() | async }} {{ mainLayoutFacadeService.getWidthClass$() | async }}">
         <router-outlet/>
       </main>
       <app-footer class="footer"/>
